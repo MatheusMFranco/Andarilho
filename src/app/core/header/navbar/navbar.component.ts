@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavPipe } from '../../../shared/pipes/nav.pipe';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  navigations: string [];
 
-  ngOnInit() {}
+  private navPipe: NavPipe;
+
+  constructor(private route: Router) { }
+
+  ngOnInit() {
+    this.navPipe = new NavPipe();
+  }
 
 }

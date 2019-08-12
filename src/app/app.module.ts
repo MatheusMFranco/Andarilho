@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './core/header/header.module';
-
+import { SharedModule } from './shared/shared.module';
+import { NavPipe } from './shared/pipes/nav.pipe';
+import { NavbarComponent } from './core/header/navbar/navbar.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    NavPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule
+    SharedModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

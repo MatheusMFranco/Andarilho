@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'andarilho';
+  readonly title = 'Andarilho';
+  readonly links = ['Listen Now', 'Library', 'Browse'];
 }
